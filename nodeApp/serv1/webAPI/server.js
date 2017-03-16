@@ -21,6 +21,14 @@ server.route({
     }
 });
 
+server.route({
+    method: 'GET',
+    path: '/env',
+    handler: (request, reply) => {
+        reply(process.env);
+    }
+});
+
 server.start((err) => {
 
     if (err) {
